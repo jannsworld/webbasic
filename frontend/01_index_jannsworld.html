@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <title>Jann's World </title>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Do Hyeon', sans-serif;
+        }
+
+        .wrap {
+            width: 900px;
+            margin: auto;
+        }
+
+        .comment {
+            color: orange;
+            font-weight: bold;
+        }
+
+        .posting-box {
+            display: none;
+            margin: 10px auto 30px auto;
+            width: 500px;
+            border: 3px solid black;
+            border-radius: 5px;
+            padding: 25px;
+        }
+
+
+    </style>
+    <script>
+        function openclose() {
+            let status = $('#post-box').css('display');
+            if (status == 'block') {
+                $('#post-box').hide();
+                $('#btn-posting-box').text('포스팅박스 열기');
+
+            } else {
+                $('#post-box').show();
+                $('#btn-posting-box').text('포스팅박스 닫기');
+            }
+        }
+    </script>
+</head>
+
+<body>
+<div class="wrap">
+    <div class="jumbotron">
+        <h1 class="display-4">Hello, This is Jann's world!</h1>
+        <p class="lead"> 여행 사진과 링크를 저장해두고<br>꺼내 볼 수 있는 소중한 서랍장입니다.</p>
+        <hr class="my-4">
+        <p>The dots will somehow connect in my future!</p>
+        <p class="lead">
+            <a onclick="openclose()" id="btn-posting-box" class="btn btn-primary btn-lg" href="#" role="button">포스팅박스
+                열기</a>
+        </p>
+    </div>
+
+    <div class="posting-box" id="post-box">
+        <div class="form-group">
+            <label>아티클URL</label>
+            <input type="email" class="form-control" id="article-url" aria-describedby="emailHelp"
+                   placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">간단 코멘트</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">기사저장</button>
+    </div>
+
+    <div class="card-columns">
+        <div class="card">
+            <img class="card-img-top" src="/image/201801.jpg" alt="Card image cap">
+            <div class="card-body">
+                <a href="https://jjungslife.tistory.com/" target="_blank" class="card-title">여기 제목이지롱</a>
+                <p class="card-text">여행의 감정과 느낌 한 스푼 아니 두 스푼 기록하기</p>
+                <p class="card-text comment">추가 코멘트 기록</p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="/image/201802.jpg" alt="Card image cap">
+            <div class="card-body">
+                <a href="https://jjungslife.tistory.com/" target="_blank" class="card-title">여기 제목이지롱</a>
+                <p class="card-text">여행의 감정과 느낌 한 스푼 아니 두 스푼 기록하기</p>
+                <p class="card-text comment">추가 코멘트 기록</p>
+
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="/image/201901.jpg" alt="Card image cap">
+            <div class="card-body">
+                <a href="https://jjungslife.tistory.com/" target="_blank" class="card-title">여기 제목이지롱</a>
+                <p class="card-text">여행의 감정과 느낌 한 스푼 아니 두 스푼 기록하기</p>
+                <p class="card-text comment">추가 코멘트 기록</p>
+
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="/image/201801.jpg" alt="Card image cap">
+            <div class="card-body">
+                <a href="https://jjungslife.tistory.com/" target="_blank" class="card-title">여기 제목이지롱</a>
+                <p class="card-text">여행의 감정과 느낌 한 스푼 아니 두 스푼 기록하기</p>
+                <p class="card-text comment">추가 코멘트 기록</p>
+
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="/image/201802.jpg" alt="Card image cap">
+            <div class="card-body">
+                <a href="https://jjungslife.tistory.com/" target="_blank" class="card-title">여기 제목이지롱</a>
+                <p class="card-text">여행의 감정과 느낌 한 스푼 아니 두 스푼 기록하기</p>
+                <p class="card-text comment">추가 코멘트 기록</p>
+
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="/image/201901.jpg" alt="Card image cap">
+            <div class="card-body">
+                <a href="https://jjungslife.tistory.com/" target="_blank" class="card-title">여기 제목이지롱</a>
+                <p class="card-text">여행의 감정과 느낌 한 스푼 아니 두 스푼 기록하기</p>
+                <p class="card-text comment">추가 코멘트 기록</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
