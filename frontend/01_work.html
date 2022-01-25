@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <title>원페이지쇼핑몰 | jann's page </title>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: 'Do Hyeon', sans-serif;
+        }
+
+        .wrap{
+               width: 900px;
+               margin: auto;
+               padding-bottom: 50px;
+        }
+
+        .my-product{
+            background-image: url("/image/201402.jpg");
+            width: 800px;
+            height: 600px;
+            margin: 30px auto 30px auto;
+            padding-top: 15px;
+
+        }
+
+        .my-title{
+            font-size: 50px;
+         }
+        .price{
+           font-weight: bold;
+           font-size: 20px;
+         }
+
+        .my-contents{
+            margin-bottom: 10px;
+            font-size: 25px;
+        }
+
+         .btn{
+            margin: auto;
+            display: block;
+         }
+         .input-group {
+            margin: 10px auto 10px auto;
+         }
+
+    </style>
+    <script>
+            function order(){
+            alert('주문이 완료되었습니다!');
+        }
+
+    </script>
+</head>
+
+<body>
+<div class="container">
+    <div class="my-product">
+    </div>
+    <div class="wrap">
+        <div class="my-contents">
+            <p class="my-title"> 행복을 팝니다 <span class="price">가격:1,000원/개</span></p>
+            행복한 순간을 담을 수 있는 곳은 우리의 머리, 가슴 그리고 또 하나, 사진이 있죠
+            <br> 당신의 행복한 순간을 사진에 담아 팝니다. 가격을 매길 수 없음을 알기에 저렴하게 팝니다.
+        </div>
+        <div class="user-info">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text" id="btnGroupAddon2">주문자 성함</div>
+                </div>
+                <input type="text" class="form-control" placeholder="" aria-label="Input group example"
+                       aria-describedby="btnGroupAddon2">
+            </div>
+
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text" id="btnGroupAddon2">수량</div>
+                </div>
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text" id="btnGroupAddon2">주소</div>
+                </div>
+                <input type="text" class="form-control" placeholder="" aria-label="Input group example"
+                       aria-describedby="btnGroupAddon2">
+            </div>
+
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text" id="btnGroupAddon2">전화번호</div>
+                </div>
+                <input type="text" class="form-control" placeholder="" aria-label="Input group example"
+                       aria-describedby="btnGroupAddon2">
+            </div>
+            <button type="submit" onclick="order()" class="btn btn-primary">주문하기</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
