@@ -15,27 +15,27 @@
     </style>
 
     <script>
-        function q1() {
-            let txt =$(`#input-q1`).val();
-                // input-q1 입력값 가져오기
-              if(txt=='') {
-                alert('입력하세요!');
-                // 입력값 빈칸이면 if(입력값=='') '입력하세요!' 얼럿
-             } else {
-                alert(txt);
-            }
-        }
-        function q2() {
-            let txt =$(`#input-q2`).val();
-                if(txt.includes('@')) {
-                   // @가 있으면 (includes 이용)
-                    let domain = txt.split('@')[1].split('.')[0];
-                    // .split(@)이용해 추출해 얼럿
-                    alert(domain);
-                 } else {
-                    alert('이메일이 아닙니다.');
-                }
-        }
+        // function q1() {
+        //     let txt =$(`#input-q1`).val();
+        //         // input-q1 입력값 가져오기
+        //       if(txt=='') {
+        //         alert('입력하세요!');
+        //         // 입력값 빈칸이면 if(입력값=='') '입력하세요!' 얼럿
+        //      } else {
+        //         alert(txt);
+        //     }
+        // }
+        // function q2() {
+        //     let txt =$(`#input-q2`).val();
+        //         if(txt.includes('@')) {
+        //            // @가 있으면 (includes 이용)
+        //             let domain = txt.split('@')[1].split('.')[0];
+        //             // .split(@)이용해 추출해 얼럿
+        //             alert(domain);
+        //          } else {
+        //             alert('이메일이 아닙니다.');
+        //         }
+        // }
 
         function q3() {
             let txt = $(`#input-q3`).val();
@@ -55,20 +55,20 @@
 <body>
     <h1>jQuery + Javascript의 조합 :)</h1>
 
-    <div class="question-box">
-        <h2> 빈칸 체크 함수 만들기</h2>
-        <h5>1. 버튼을 눌렀을 때 입력한 글자로 얼럿 띄우기</h5>
-        <h5>2. 버튼을 눌렀을 때 칸에 아무 것도 없으면 "입력 하세요!" 얼럿 띄우기</h5>
-        <input id="input-q1" type="text" /> <button onclick="q1()" id="q1">클릭</button>
-    </div>
-    <hr />
-    <div class="question-box">
-        <h2> 이메일 판별 함수 만들기</h2>
-        <h5>1. 버튼을 눌렀을 때 입력받은 이메일로 얼럿 띄우기</h5>
-        <h5>2. 이메일이 아니면(@가 없으면) '이메일이 아닙니다'라는 얼럿 띄우기</h5>
-        <h5>3. 이메일 도메인만 얼럿 띄우기</h5>
-        <input id="input-q2" type="text" /> <button onclick="q2()">클릭</button>
-    </div>
+<!--    <div class="question-box">-->
+<!--        <h2> 빈칸 체크 함수 만들기</h2>-->
+<!--        <h5>1. 버튼을 눌렀을 때 입력한 글자로 얼럿 띄우기</h5>-->
+<!--        <h5>2. 버튼을 눌렀을 때 칸에 아무 것도 없으면 "입력 하세요!" 얼럿 띄우기</h5>-->
+<!--        <input id="input-q1" type="text" /> <button onclick="q1()" id="q1">클릭</button>-->
+<!--    </div>-->
+<!--    <hr />-->
+<!--    <div class="question-box">-->
+<!--        <h2> 이메일 판별 함수 만들기</h2>-->
+<!--        <h5>1. 버튼을 눌렀을 때 입력받은 이메일로 얼럿 띄우기</h5>-->
+<!--        <h5>2. 이메일이 아니면(@가 없으면) '이메일이 아닙니다'라는 얼럿 띄우기</h5>-->
+<!--        <h5>3. 이메일 도메인만 얼럿 띄우기</h5>-->
+<!--        <input id="input-q2" type="text" /> <button onclick="q2()">클릭</button>-->
+<!--    </div>-->
     <hr />
     <div class="question-box">
         <h2> HTML 붙이기/지우기 연습</h2>
