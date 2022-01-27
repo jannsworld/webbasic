@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery 연습</title>
+    <!-- JQuery를 import 합니다 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <style type="text/css">
+        div.question-box {
+            margin: 10px 0 20px 0;
+        }
+
+        div.question-box > div {
+            margin-top: 30px;
+        }
+
+
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            // 창이 뜨자마자 바로 출력
+            q1()
+        });
+
+        function q1() {
+            $.ajax({
+                type: "GET", //값만 받아오기에 GET방식
+                url: "https://api.thedogapi.com/v1/images/search",
+                data: {},
+                success: function (response) {
+                    let imgurl = response[0]['url']
+                    $('#img-dog').attr("src", imgurl)
+                        // 이미지태그 src 바꾸기
+                }
+            })
+        }
+
+    </script>
+
+</head>
+<body>
+<h1>Open api 활용 & JQuery+Ajax 연습!</h1>
+
+<hr/>
+
+<div class="question-box">
+    <h2>랜덤 강아지 사진 API 이용하기</h2>
+    <p>귀여운 강아지 사진 마음껏 보기!</p>
+    <p>업데이트 버튼을 누를 때마다 새로운 강아지 사진 나오기!</p>
+    <button onclick="q1()">멍멍이 보자</button>
+    <div>
+        <img id="img-dog" src="/img/HJ.jpg"/>
+    </div>
+</div>
+</body>
+</html>
