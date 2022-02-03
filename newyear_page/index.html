@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>덕담 하나 주면 안 잡아먹지</title>
+
+    <meta property="og:title" content="Jann 님의 덕담 페이지"/>
+    <meta property="og:description" content="덕담 한마디 남겨주세요!"/>
+    <meta property="og:image" content="https://2022-01-newyear.s3.ap-northeast-2.amazonaws.com/ogimage.png"/>
+
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+
+    <style>
+        /*@font-face {*/
+        /*    font-family: 'Do Hyeon', sans-serif;*/
+        /*    src: url('https://2022-01-newyear.s3.ap-northeast-2.amazonaws.com/Cafe24Ssurround.woff') format('woff');*/
+        /*}*/
+
+        * {
+            font-family: 'Do Hyeon', sans-serif;
+        }
+
+        .background {
+            background-color: violet;
+
+            max-width: 450px;
+            /* 최대 가로 길이*/
+
+            width: 100vw;
+            height: 100vh;
+            /* 배경 화면에 꽉차게 보이게 하기 100vw, 100vh */
+
+            background-image: url('https://2022-01-newyear.s3.ap-northeast-2.amazonaws.com/bg_default.png');
+            background-position: center;
+            background-size: cover;
+            /* 배경 가운데 설정 position, size */
+
+            margin: auto;
+        }
+
+        body, h1, p {
+            margin:0;
+            padding:0;
+        }  /* body 여백 없애는 설정 : 기본 여백을 없애 주어야 편하기에 사용 되는 h1, p 태그 포함해 기본 여백 0으로 설정 */
+
+        .title {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            padding-top: 5vh;
+
+            color: #3f3732;
+        }
+
+        .title > h1 {
+            font-size: 22px;
+            background-color: white;
+
+            padding: 8px 16px;
+            border-radius: 16px;
+
+            margin-bottom: 16px;
+        }
+
+        .title > p {
+            font-size: 25px;
+        }
+
+        .title > p > span {
+            font-size: 30px;
+            text-decoration: underline; /* 텍스트 밑줄*/
+        }
+
+
+        .btn {
+            width: 300px;
+            height: 50px;
+            background-color: #3f3732;
+
+            color: white;
+
+            font-size: 18px;
+            border-radius: 10px;
+
+            cursor: pointer;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            position: fixed;
+            bottom: 16px;
+            left: calc(50% - 150px);
+        }
+
+        .box > img {
+            width: 70px;
+
+            position: absolute;
+            bottom: 50%;
+            left: 20%;
+            cursor: pointer;
+        }
+
+
+    </style>
+
+
+    <script src="https://2022-01-newyear.s3.ap-northeast-2.amazonaws.com/free_newyear_2022.js"></script>
+    <script> let mycode = '30e3641814421e4f359c2dddfb00d957'; </script>
+
+</head>
+<body>
+    <div class="background">
+        <div class="title">
+            <h1>덕담 하나 주면 안 잡아먹지!</h1>
+            <p class="subtitle"> Jann 님이 받은 덕담: <span>2개</span></p>
+        </div>
+        <div class="box">
+        </div>
+        <div class="btn">Jann 바구니에 덕담 남기기</div>
+    </div>
+</body>
+</html>
