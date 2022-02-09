@@ -5,7 +5,7 @@ from pymongo import MongoClient
 client = MongoClient('localhost', 27017)
 db = client.dbjann
 
-## HTML을 주는 부분
+#HTML을 주는 부분
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -18,9 +18,9 @@ def write_review():
     review_receive = request.form['review_give']
 
     doc = {
-        'title' :title_receive,
-        'author' :author_receive,
-        'review' :review_receive
+        'title':title_receive,
+        'author':author_receive,
+        'review':review_receive
     }
     db.bookreview.insert_one(doc)
 
