@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <title>Jann's page: 원페이지쇼핑몰 | 데일리 환율 표기 </title>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Do Hyeon', sans-serif;
+        }
+
+        .wrap {
+            width: 900px;
+            margin: auto;
+            padding-bottom: 50px;
+
+        }
+
+        .my-product {
+            background-image: url("../static/201901.jpg");
+            width: 1000px;
+            height: 700px;
+            margin: 30px auto 30px auto;
+            padding-top: 15px;
+
+        }
+
+        .my-title {
+            font-size: 50px;
+            color: chocolate;
+        }
+
+        .price {
+            font-weight: bold;
+            font-size: 20px;
+            color: black;
+
+        }
+
+        .my-contents {
+            margin-bottom: 10px;
+            font-size: 25px;
+        }
+
+        .btn {
+            margin: auto;
+            display: block;
+        }
+
+        .input-group {
+            margin: 10px auto 10px auto;
+        }
+
+        #now-rate {
+            color: blue;
+        }
+
+    </style>
+    <script>
+        $(document).ready(function () { // 페이지 로딩되자마자 아래 함수 바로 실행
+            q1();
+            show_order();
+        });
+
+        function q1() { // 매일매일 달라지는 환율 불러오는 api 받아오기
+            $.ajax({
+                type: "GET",
+                url: "http://spartacodingclub.shop/sparta_api/rate",
+                data: {},
+                success: function (response) {
+                    let now_rate = response['rate'];
+                    $('#now-rate').text(now_rate); // .text로 텍스트만 출력
+                }
+            })
+        }
+
+
+        function make_order() {
+            let name = $('#order-name').val()
+            let count = $('#order-count').val()
+            let address = $('#order-address').val()
+            let memo = $('#order-memo').val()
+
+            $.ajax({
+                type: "POST",
+                url: "/order",
+                data: {name_give: name, count_give: count, address_give: address, memo_give: memo},
+                success: function (response) {
+                    alert(response["msg"]);
+                    window.location.reload();
+                }
+            })
+        }
+
+        function show_order() {
+            $.ajax({
+                type: "GET",
+                url: "/order",
+                data: {},
+                success: function (response) {
+                    let orders = response['all_orders']
+                    for (let i = 0; i < orders.length; i++) {
+                        let name = orders[i]['name']
+                        let count = orders[i]['count']
+                        let address = orders[i]['address']
+                        let memo = orders[i]['memo']
+
+
+                        let temp_html = `<tr>
+                                            <th>${name}</th>
+                                            <td>${count}</td>
+                                            <td>${address}</td>
+                                            <td>${memo}</td>
+                                          </tr>`
+                        $('#order-box').append(temp_html)
+                    }
+                }
+            })
+        }
+
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="my-product">
+    </div>
+    <div class="wrap">
+        <div class="my-contents">
+            <hr>
+            <p class="my-title"> 행복을 팝니다 <span class="price">가격:1,000원/개</span></p>
+            행복한 순간을 담을 수 있는 곳은 우리의 머리, 가슴 그리고 또 하나, 사진이 있죠
+            <br> 당신의 행복한 순간을 사진에 담아 팝니다. 가격을 매길 수 없음을 알기에 저렴하게 팝니다.
+            <hr>
+            <p class="rate"> 오늘 달러-원 환율: <span id="now-rate">1219.15</span></p>
+        </div>
+
+
+        <div class="user-info">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text" id="btnGroupAddon2">주문자 성함</div>
+                </div>
+                <input type="text" id="order-name" class="form-control" placeholder="" aria-label="Input group example"
+                       aria-describedby="btnGroupAddon2">
+            </div>
+
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text" id="btnGroupAddon2">수량</div>
+                </div>
+                <select class="form-control" id="order-count">
+                    <option>(최대 3개)</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text" id="btnGroupAddon2">주소</div>
+                </div>
+                <input type="text" id="order-address" class="form-control" placeholder=""
+                       aria-label="Input group example"
+                       aria-describedby="btnGroupAddon2">
+            </div>
+
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text" id="btnGroupAddon2">메모</div>
+                </div>
+                <input type="text" id="order-memo" class="form-control" placeholder="" aria-label="Input group example"
+                       aria-describedby="btnGroupAddon2">
+            </div>
+            <button type="submit" onclick="make_order()" class="btn btn-primary">주문하기</button>
+        </div>
+    </div>
+    <table class="table">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">이름</th>
+            <th scope="col">수량</th>
+            <th scope="col">주소</th>
+            <th scope="col">메모</th>
+        </tr>
+        </thead>
+        <tbody id="order-box">
+
+        </tbody>
+    </table>
+</div>
+</body>
+
+</html>
